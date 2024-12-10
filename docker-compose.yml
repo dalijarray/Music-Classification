@@ -1,11 +1,17 @@
 version: '3.8'
 services:
-  svm_service:
+  vgg_service:
     build: C:\music_class
     ports:
       - "5000:5000"
     networks:
       - app-network
+  svm_service:
+    build: ./back SVM/SVM
+    ports:
+      - "5001:5001"
+    networks:
+      - app-network    
   frontend:
     build: ./front
     ports:
